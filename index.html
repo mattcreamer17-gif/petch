@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Saw you shipped version 1.8.7 in February and that Mauito is doing the pet-health Q&A. I have a hypothesis about where that assistant breaks first when you cross into Mexico or Colombia.">
+<title>Dónde encaja la IA en Petch, y dónde no.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-logo">
+      <img src="logo-wordmark.png" alt="Petch">
+    </div>
+    <div class="header-meta">Preparado para el equipo Petch · eMerge Americas 2026 · Booth SS46</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-paws" aria-hidden="true"></div>
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow"><span class="hero-dot"></span> Mauito, en línea · v1.8.7</span>
+    <h1>Dónde encaja la IA en Petch, <span class="accent">y dónde no.</span></h1>
+    <p class="hero-sub">Una lectura para BDAC Tech Labs antes de cruzar a México o Colombia. Qué pieza del producto necesita IA de verdad, qué pieza necesita reglas, y qué pieza solo necesita código sólido.</p>
+
+    <div class="mauito-bubble">
+      <strong>Hipótesis:</strong> Mauito está cargando más peso del que debería. Sin una capa de evaluación y un fallback de reglas, una respuesta médica mal calibrada erosiona la confianza de miles de usuarios a la vez. Vale la pena separar eso antes de sumar un segundo país.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow-tag">El momento</span>
+  <h2>Siete productos en una sola app, y ahora viene un segundo país.</h2>
+  <p class="lead">Ustedes acaban de lanzar Mauito dentro de una app que ya hace siete cosas distintas: historial médico, clínicas, emergencias, mascotas perdidas, entrenamiento, tienda con delivery. La versión 1.8.7 salió en febrero. Ahora viene eMerge, y con eMerge viene la conversación de expandir fuera de Venezuela.</p>
+  <p>Ese es el momento en que vale la pena preguntarse qué pieza del producto necesita IA de verdad, qué pieza necesita reglas, y qué pieza solo necesita código sólido.</p>
+</section>
+
+<section class="section">
+  <span class="eyebrow-tag">El encuadre</span>
+  <h2>La mayoría de los equipos ponen un LLM donde Postgres bastaba.</h2>
+  <p>Nuestra lectura es más simple. Hacer esta separación explícita antes de entrar a un segundo país ahorra meses de rebuilds.</p>
+
+  <div class="frame-card">
+    <div class="frame-split">
+      <div class="frame-tile">
+        <div class="pct">60%</div>
+        <h4>Código tradicional y base de datos</h4>
+        <p>Perfiles, citas, historial. No necesita IA.</p>
+      </div>
+      <div class="frame-tile mid">
+        <div class="pct">30%</div>
+        <h4>Lógica basada en reglas</h4>
+        <p>Emergencias, rutas, notificaciones. Determinista y auditable.</p>
+      </div>
+      <div class="frame-tile ai">
+        <div class="pct">10%</div>
+        <h4>IA real</h4>
+        <p>Casi todo vive dentro de Mauito. Y ahí es donde hay que invertir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="proof-inner">
+    <span class="eyebrow-tag">El caso que encaja</span>
+    <h3>Feeld. App de consumo. CTO que necesitaba una lectura externa.</h3>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stat">4 semanas</div>
+        <p>Sprint enfocado con workshop, calls de asesoría, y entregables concretos.</p>
+      </div>
+      <div class="proof-card">
+        <div class="stat">2 marcos</div>
+        <p>Organizational Context Architecture y un Strategic Operations Framework para el equipo.</p>
+      </div>
+      <div class="proof-card">
+        <div class="stat">1 mapa</div>
+        <p>Qué construir ellos mismos, qué comprar, y qué dejar quieto. El mismo formato aplica a Petch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-small">
+  <span class="eyebrow-tag">El método publicado</span>
+  <h2>Interpretable Context Methodology.</h2>
+  <p>Publicamos el método detrás de esto en ACM TiiS como Interpretable Context Methodology. Código abierto en GitHub. Es útil para cualquier equipo que esté construyendo un asistente con memoria y necesite entender por qué a veces funciona y a veces no. Aplica directo a Mauito: L0 identidad, L1 enrutamiento, L2 protocolos veterinarios, L3 referencias de medicamentos y entrenamiento, L4 historial por mascota.</p>
+  <p>
+    <a class="paper-link" href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">Repositorio en GitHub</a>
+  </p>
+</section>
+
+<section class="section section-small">
+  <span class="eyebrow-tag">La línea de credibilidad</span>
+  <h2>La parte de distribución no es teórica.</h2>
+  <p>Jake Van Clief, fundador de Eduba, también construyó una comunidad online que creció a 22,000 miembros en cinco semanas. 1,500+ personas entrenadas en engagements empresariales desde mayo de 2025, incluyendo Pacific Life, Colgate-Palmolive, y KPMG UK (una de las Big Four). Eduba trabaja junto con NLP Logix para lo que vive debajo de la capa de orquestación. NLP Logix lleva en machine learning desde 2011 y opera con más de 150 data scientists.</p>
+</section>
+
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <h2>Pasen por el booth SS46.</h2>
+    <p>30 minutos con Matt para hablar del mapa de Mauito y del siguiente país. Traigan la consulta más rara que Mauito haya recibido esta semana.</p>
+
+    <div class="cta-host">
+      <span>Matt Creamer</span>
+      <span class="dot-sep"></span>
+      <span>CRO, Eduba</span>
+      <span class="dot-sep"></span>
+      <span>Bilingüe ES / EN</span>
+    </div>
+
+    <a class="cta-button" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">Agendar 30 min con Matt</a>
+
+    <p class="cta-foot">O escribir a <a href="mailto:thecro@eduba.io" style="color:#fff;text-decoration:underline;">thecro@eduba.io</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  Preparado por Eduba · <a href="https://eduba.io" target="_blank" rel="noopener">eduba.io</a>
+</footer>
+
+</body>
+</html>
